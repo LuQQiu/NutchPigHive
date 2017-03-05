@@ -1,5 +1,11 @@
 # GooglePlay with Nutch, Pig and Hive
+•	Parsed GooglePlay website and designed a distributed web crawler with Apache Nutch Java API
 
+•	Acquired 2000 app data with AWS EMR and EC2 in 1 minute and stored the data in S3
+
+•	Loaded data with PIG LoadFunc and then filtered data using PIG
+
+•	Construct data analysis using Hive
 # How we do?
 ## GooglePlay Crawler
 Our crawler is based on Nutch 1.12, so you need to git clone nutch repository first.
