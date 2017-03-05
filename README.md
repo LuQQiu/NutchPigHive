@@ -8,6 +8,7 @@
 •	Construct data analysis using Hive
 # How we do?
 ## GooglePlay Crawler (Nutch)
+### Hadoop MapReduce, AWS EMR/EC2/S3
 Our crawler is based on Nutch 1.12, so you need to git clone nutch repository first.
 ```
 git clone https://github.com/apache/nutch
@@ -43,6 +44,7 @@ You can also send the jar and seed file to AWS S3, and run the job in EMR
 org.apache.nutch.googleplay.GooglePlayCrawler s3://'your directory'/seed -numFetchers 100 -depth 3 -finalOutput s3://'your directory'/
 ```
 ## Nutch Parsed Data Loader (Pig)
+### Pig, AWS S3
 Build package
 ```
 mvn package
