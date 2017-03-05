@@ -1,7 +1,7 @@
 # GooglePlay with Nutch, Pig and Hive
 
 # How we do?
-## GooglePlayCrawler
+## GooglePlay Crawler
 Our crawler is based on Nutch 1.12, so you need to git clone nutch repository first.
 ```
 git clone https://github.com/apache/nutch
@@ -35,4 +35,28 @@ hadoop fs -text nutchdb/segments/xxxxx/parse_data/part-00000/data
 You can also send the jar and seed file to AWS S3, and run the job in EMR
 ```
 org.apache.nutch.googleplay.GooglePlayCrawler s3://'your directory'/seed -numFetchers 100 -depth 3 -finalOutput s3://'your directory'/
+```
+## Nutch Parsed Data Loader
+Build package
+```
+mvn package
+```
+Access Amazon S3 and change your hadoop core-site.xml settings
+```
+<property>
+    <name>fs.s3n.impl</name> 
+    <value>org.apache.hadoop.fs.s3native.NativeS3FileSystem</value>
+</property>
+<property>
+    <name>fs.s3n.awsAccessKeyId</name>
+    <value>your aws access key</value>
+</property>
+<property>
+    <name>fs.s3n.awsSecretAccessKey</name>
+    <value>your aws secret key</value>
+</property>
+```
+Run the loadgoogle.pig--remember to change the directory to your s3 directory
+```
+pig loadgoogle.pig
 ```
