@@ -23,3 +23,12 @@ Create a seed file which contains the web page we plan to crawl first.
 ```
 echo "https://play.google.com/store/apps/details?id=com.facebook.orca" > seed
 ```
+Run googleplaycrawler on single node cluster
+```
+hadoop fs -put seed .
+hadoop jar build/apache-nutch-1.12.job org.apache.nutch.googleplay.GooglePlayCrawler seed -numFetchers 10
+```
+Check output
+```
+hadoop fs -text nutchdb/segments/xxxxx/parse_data/part-00000/data
+```
