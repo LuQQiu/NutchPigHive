@@ -32,3 +32,7 @@ Check output
 ```
 hadoop fs -text nutchdb/segments/xxxxx/parse_data/part-00000/data
 ```
+You can also send the jar and seed file to AWS S3, and run the job in EMR
+```
+org.apache.nutch.googleplay.GooglePlayCrawler s3://'your directory'/seed -numFetchers 100 -depth 3 -finalOutput s3://'your directory'/
+```
