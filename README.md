@@ -1,6 +1,6 @@
 # GooglePlay with Nutch, Pig and Hive
 
-# How to do
+# How we do?
 ## GooglePlayCrawler
 Our crawler is based on Nutch 1.12, so you need to git clone nutch repository first.
 ```
